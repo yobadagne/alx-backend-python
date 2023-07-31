@@ -5,9 +5,9 @@
 import unittest
 from typing import Dict, Tuple, Union
 from parameterized import parameterized
-from utils import accsess_nested_map
+from utils import access_nested_map
 
-Class TestAccessNestedMap(unittest.TestCase):
+class TestAccessNestedMap(unittest.TestCase):
     """Tests the `access_nested_map` function."""
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
