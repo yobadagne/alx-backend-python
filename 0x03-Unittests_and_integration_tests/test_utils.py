@@ -6,7 +6,7 @@ import unittest
 from typing import Dict, Tuple, Union
 from parameterized import parameterized
 from unittest.mock import Mock, patch
-from utils import access_nested_map , get_json
+from utils import (access_nested_map , get_json)
 
 class TestAccessNestedMap(unittest.TestCase):
     """Tests the `access_nested_map` function."""
@@ -34,7 +34,7 @@ class TestGetJson(unittest.TestCase):
         ])
     def test_get_json(self, test_url:str, test_payload:Dict) -> None:
         """ Test for json output"""
-        formock = {'return' : test_payload}
+        formock = {'json.return_value' : test_payload}
         with patch("requests.get", return_value = Mock(**formock)) as req_get:
             self.assertEqual(get_json(test_url),test_payload)
             req_get.assert_called_once_with(test_url)
